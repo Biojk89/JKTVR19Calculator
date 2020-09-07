@@ -25,18 +25,32 @@ public class NewClass {
             scanner.nextLine();
             System.out.print("Choose operation: (+ - * /): ");
             String znak = scanner.nextLine();
-            System.out.print("Result: ");
-            if (znak.equals("+")) {
-                System.out.println(number1 + number2);
-            } else if (znak.equals("-")) {
-                System.out.println(number1 - number2);
-            } else if (znak.equals("*")) {
-                System.out.println(number1 * number2);
-            } else if (znak.equals("/")) {
-                if (number1 == 0 || number2 == 0) {
-                    System.out.println("На ноль делить нельзя");
-                }
-                System.out.println(number1 / number2);
+            
+            switch (znak) {
+                case "+":
+                    System.out.print("Result: ");
+                    System.out.println(number1 + number2);
+                    break;
+                case "-":
+                    System.out.print("Result: ");
+                    System.out.println(number1 - number2);
+                    break;
+                case "*":
+                    System.out.print("Result: ");
+                    System.out.println(number1 * number2);
+                    break;
+                case "/":
+                    
+                    if (number1 == 0 || number2 == 0) {
+                        System.out.println("На ноль делить нельзя");
+                    } else {
+                        System.out.print("Result: ");
+                        System.out.println(number1 / number2);
+                    }
+                    break;
+                default:
+                    System.out.println("Not correct operation");
+                    break;
             }
             System.out.println("Exit? y / n");
             String action = scanner.nextLine();
